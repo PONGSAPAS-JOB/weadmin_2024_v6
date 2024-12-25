@@ -718,7 +718,7 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                         <span class="formFontSubjectTxt"><?php echo $langMod["txt:date"] ?></span><br />
                         <span class="formFontTileTxt"><?php echo $langMod["txt:dateDe"] ?></span>
                     </td>
-                </tr>
+                </tr> 
                 <tr>
                     <td colspan="7" align="right" valign="top" height="15"></td>
                 </tr>
