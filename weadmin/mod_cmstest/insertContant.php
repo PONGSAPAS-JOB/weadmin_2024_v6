@@ -65,8 +65,11 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_picshow2"]="'".$_POST["inputTypePic2"]."'";
 
     $insert[$mod_tb_root . "_type"] = "'" . $_POST["inputType"] . "'";
+    $insert[$mod_tb_root . "_type2"] = "'" . $_POST["inputType2"] . "'";
     $insert[$mod_tb_root . "_url"] = "'" . changeQuot($_REQUEST['inputurl']) . "'";
+    $insert[$mod_tb_root . "_url2"] = "'" . changeQuot($_REQUEST['inputurl2']) . "'";
     $insert[$mod_tb_root . "_filevdo"] = "'" . $_POST["vdoname"] . "'";
+    $insert[$mod_tb_root . "_filevdo2"] = "'" . $_POST["vdoname2"] . "'";
     $insert[$mod_tb_root . "_htmlfilename"] = "'" . $filename . "'";
     $insert[$mod_tb_root . "_htmlfilename2"] = "'" . $filename2 . "'";
     $insert[$mod_tb_root . "_crebyid"] = "'" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";
@@ -76,8 +79,13 @@ if ($_REQUEST['execute'] == "insert") {
     $insert[$mod_tb_root . "_description"] = "'" . changeQuot($_REQUEST['inputTagDescription']) . "'";
     $insert[$mod_tb_root . "_keywords"] = "'" . changeQuot($_REQUEST['inputTagKeywords']) . "'";
     $insert[$mod_tb_root . "_metatitle"] = "'" . changeQuot($_REQUEST['inputTagTitle']) . "'";
+    $insert[$mod_tb_root . "_description2"] = "'" . changeQuot($_REQUEST['inputTagDescription2']) . "'";
+    $insert[$mod_tb_root . "_keywords2"] = "'" . changeQuot($_REQUEST['inputTagKeywords2']) . "'";
+    $insert[$mod_tb_root . "_metatitle2"] = "'" . changeQuot($_REQUEST['inputTagTitle2']) . "'";
     $insert[$mod_tb_root . "_sdate"] = "'" . DateFormatInsert($_REQUEST['sdateInput']) . "'";
     $insert[$mod_tb_root . "_edate"] = "'" . DateFormatInsert($_REQUEST['edateInput']) . "'";
+    $insert[$mod_tb_root . "_sdate2"] = "'" . DateFormatInsert($_REQUEST['sdateInput2']) . "'";
+    $insert[$mod_tb_root . "_edate2"] = "'" . DateFormatInsert($_REQUEST['edateInput2']) . "'";
     $insert[$mod_tb_root . "_typec"] = "'" . $_REQUEST["inputTypeC"] . "'";
     $insert[$mod_tb_root . "_urlc"] = "'" . $_REQUEST["inputurlc"] . "'";
     $insert[$mod_tb_root . "_target"] = "'" . $_REQUEST["inputTarget"] . "'";
@@ -94,6 +102,13 @@ if ($_REQUEST['execute'] == "insert") {
     }
 
     $insert[$mod_tb_root . "_lastdate"] = "NOW()";
+
+    if ($_REQUEST['cdateInput2'] != "") {
+        $insert[$mod_tb_root . "_credate2"] = "'" . DateFormatInsert($_REQUEST['cdateInput2']) . "'";
+    } else {
+        $insert[$mod_tb_root . "_credate2"] = "NOW()";
+    }
+
     $insert[$mod_tb_root . "_status"] = "'Disable'";
     $insert[$mod_tb_root . "_pin"] = "'Unpin'";
     $insert[$mod_tb_root . "_order"] = "'" . $maxOrder . "'";

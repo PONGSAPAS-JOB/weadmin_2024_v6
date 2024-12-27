@@ -6,7 +6,10 @@ $HomePage = new HomePage;
 switch ($url->segment[1]) {
     default:
         $callTopGraphic  = $HomePage->callTopGraphic($config['tgp']['masterkey']);
+        $callCmsTest  = $HomePage->callCmsTest($config['cmstest']['masterkey']);
+        print_pre($callCmsTest);
         $smarty->assign("callTopGraphic", $callTopGraphic);
+        $smarty->assign("callCmsTest", $callCmsTest);
         
         /*## Start SEO #####*/
         $seo_desc = "";
@@ -22,5 +25,6 @@ switch ($url->segment[1]) {
         );
         break;
 }
+
 $smarty->assign("menuActive", $menuActive);
 $smarty->assign("fileInclude", $settingPage);

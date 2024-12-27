@@ -14,10 +14,10 @@ $valLinkNav1="../core/index.php";
 
 
 			$sql = "SELECT   ";
-			$sql .= "   ".$mod_tb_root."_id as  id, ".$mod_tb_root."_credate as credate , ".$mod_tb_root."_crebyid as crebyid, ".$mod_tb_root."_status as status,    ".$mod_tb_root."_sdate  as sdate	,    ".$mod_tb_root."_edate as edate ,    ".$mod_tb_root."_pic as pic , ".$mod_tb_root."_pic2 as pic2 , ".$mod_tb_root."_type as type , ".$mod_tb_root."_filevdo as filevdo, ".$mod_tb_root."_url as url,  ".$mod_tb_root."_gid as gid   ";
+			$sql .= "   ".$mod_tb_root."_id as  id, ".$mod_tb_root."_credate as credate , ".$mod_tb_root."_credate2 as credate2 , ".$mod_tb_root."_crebyid as crebyid, ".$mod_tb_root."_status as status,    ".$mod_tb_root."_sdate  as sdate	,    ".$mod_tb_root."_edate as edate ,    ".$mod_tb_root."_sdate2  as sdate2	,    ".$mod_tb_root."_edate2 as edate2 ,    ".$mod_tb_root."_pic as pic , ".$mod_tb_root."_pic2 as pic2 , ".$mod_tb_root."_type as type , ".$mod_tb_root."_filevdo as filevdo, ".$mod_tb_root."_url as url, ".$mod_tb_root."_type2 as type2 ,  ".$mod_tb_root."_filevdo2 as filevdo2, ".$mod_tb_root."_url2 as url2,    ".$mod_tb_root."_gid as gid   ";
 
 			if($_REQUEST['inputLt']=="Thai"){
-				$sql .= " , ".$mod_tb_root."_subject as subject , ".$mod_tb_root."_subject2 as subject2  ,    ".$mod_tb_root."_title as title , ".$mod_tb_root."_title2 as title2, ".$mod_tb_root."_htmlfilename as htmlfilename  , ".$mod_tb_root."_htmlfilename2 as htmlfilename2  ,    ".$mod_tb_root."_metatitle  as	metatitle 	,    ".$mod_tb_root."_description as description  ,    ".$mod_tb_root."_keywords as keywords   ";
+				$sql .= " , ".$mod_tb_root."_subject as subject , ".$mod_tb_root."_subject2 as subject2  ,    ".$mod_tb_root."_title as title , ".$mod_tb_root."_title2 as title2, ".$mod_tb_root."_htmlfilename as htmlfilename  , ".$mod_tb_root."_htmlfilename2 as htmlfilename2  ,    ".$mod_tb_root."_metatitle  as	metatitle 	,    ".$mod_tb_root."_description as description  ,    ".$mod_tb_root."_keywords as keywords  ,    ".$mod_tb_root."_metatitle2  as	metatitle2 	,    ".$mod_tb_root."_description2 as description2  ,    ".$mod_tb_root."_keywords2 as keywords2   " ;
 			}elseif($_REQUEST['inputLt']=="Eng"){
 				$sql .= " , ".$mod_tb_root."_subjecten as subjecten  ,    ".$mod_tb_root."_titleen as titleen , ".$mod_tb_root."_htmlfilenameen as htmlfilenameen   ,    ".$mod_tb_root."_metatitleen as metatitleen  ,    ".$mod_tb_root."_descriptionen as descriptionen 	 ,    ".$mod_tb_root."_keywordsen as keywordsen   ";
 			}else{
@@ -31,6 +31,7 @@ $valLinkNav1="../core/index.php";
 			// $Row=wewebNumRowsDB($coreLanguageSQL,$Query);
 			$valid=$Row['id'];
 			$valcredate=DateFormatInsertRe($Row['credate']);
+			$valcredate2=DateFormatInsertRe($Row['credate2']);
 			$valcreby=$Row['crebyid'];
 			$valstatus=$Row['status'];
 			if($Row['sdate']!="0000-00-00 00:00:00"){
@@ -38,6 +39,12 @@ $valLinkNav1="../core/index.php";
 			}
 			if($Row['edate']!="0000-00-00 00:00:00"){
 			$valEdate=DateFormatInsertRe($Row['edate']);
+			}
+			if($Row['sdate2']!="0000-00-00 00:00:00"){
+			$valSdate2=DateFormatInsertRe($Row['sdate2']);
+			}
+			if($Row['edate2']!="0000-00-00 00:00:00"){
+			$valEdate2=DateFormatInsertRe($Row['edate2']);
 			}
 			$valPicName=$Row['pic'];
 			$valPic=$mod_path_pictures."/".$Row['pic'];
@@ -48,6 +55,10 @@ $valLinkNav1="../core/index.php";
 			$valFilevdo=$Row['filevdo'];
 			$valPathvdo=$mod_path_vdo."/".$Row['filevdo'];
 			$valUrl=$Row['url'];
+			$valType2=$Row['type2'];
+			$valFilevdo2=$Row['filevdo2'];
+			$valPathvdo2=$mod_path_vdo."/".$Row['filevdo2'];
+			$valUrl2=$Row['url2'];
 			$valGid=$Row['gid'];
 
 			$valSubject=rechangeQuot($Row['subject']);
@@ -61,6 +72,9 @@ $valLinkNav1="../core/index.php";
 			$valMetatitle=rechangeQuot($Row['metatitle']);
 			$valDescription=rechangeQuot($Row['description']);
 			$valKeywords=rechangeQuot($Row['keywords']);
+			$valMetatitle2=rechangeQuot($Row['metatitle2']);
+			$valDescription2=rechangeQuot($Row['description2']);
+			$valKeywords2=rechangeQuot($Row['keywords2']);
 			$valPicShow = $Row['picshow'];
 			$valPicShow2 = $Row['picshow2'];
 			$valTypeC = $Row['typec'];
@@ -599,7 +613,8 @@ jQuery(document).ready(function(){
 </div></td>
   </tr>
   </table>
-<table style="display:none;"  width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout" <?php if($valTypeC == 2){ ?> style="display:none;" <?php } ?>>
+  <br class="ckabout" <?php if($valTypeC == 2){ ?> style="display:none;" <?php } ?>/>
+<table   width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout" <?php if($valTypeC == 2){ ?> style="display:none;" <?php } ?>>
     <tr >
     <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
     <span class="formFontSubjectTxt"><?php echo $langMod["txt:video"]?></span><br/>
@@ -607,26 +622,26 @@ jQuery(document).ready(function(){
     </tr>
                             <tr ><td colspan="7" align="right"  valign="top"   height="15" ></td></tr>
 
-      <tr style="display:none;">
+      <tr >
     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:typevdo"]?></td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
     <label>
-    <div class="formDivRadioL"><input name="inputType" id="inputType" value="url" type="radio"  class="formRadioContantTb" onclick="jQuery('#boxInputfile').hide();jQuery('#boxInputlink').show();" <?php if($valType=="url"){?> checked="checked" <?php }?>  /></div>
+    <div class="formDivRadioL"><input name="inputType" id="inputType" value="url" type="radio"  class="formRadioContantTb" onclick="jQuery('#boxInputfilevdo').hide();jQuery('#boxInputlinkvdo').show();" <?php if($valType=="url"){?> checked="checked" <?php }?>  /></div>
     <div class="formDivRadioR"><?php echo $langMod["tit:linkvdo"]?></div>
     </label>
 
     <label>
-    <div class="formDivRadioL"><input name="inputType" id="inputType"  value="file"  type="radio"  class="formRadioContantTb" onclick="jQuery('#boxInputlink').hide();jQuery('#boxInputfile').show();" <?php if($valType=="file"){?> checked="checked" <?php }?>  /></div>
+    <div class="formDivRadioL"><input name="inputType" id="inputType"  value="file"  type="radio"  class="formRadioContantTb" onclick="jQuery('#boxInputlinkvdo').hide();jQuery('#boxInputfilevdo').show();" <?php if($valType=="file"){?> checked="checked" <?php }?>  /></div>
     <div class="formDivRadioR"><?php echo $langMod["tit:uploadvdo"]?></div>
     </label>
     </label>   </td>
       </tr>
-  <tr id="boxInputlink"  style="display:none;" >
+  <tr id="boxInputlinkvdo"   <?php if($valType=="file"){?> style="display:none;" <?php }?>>
     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" >ลิงค์ Youtube</td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><textarea name="inputurl" id="inputurl" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valUrl?></textarea><br />
 		<span class="formFontNoteTxt"><?php echo $langMod["tit:linkvdonote"]?></span></td>
   </tr>
-    <tr id="boxInputfile"  <?php if($valType=="url"){?> style="display:none;" <?php }?>>
+    <tr id="boxInputfilevdo"  <?php if($valType=="url"){?> style="display:none;" <?php }?>>
     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:uploadvdo"]?></td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
     <div class="file-input-wrapper">
@@ -647,6 +662,57 @@ jQuery(document).ready(function(){
 </div></td>
   </tr>
        </table>
+
+	   <br class="ckabout2" <?php if($valTypeC2 == 2){ ?> style="display:none;" <?php } ?>/>
+<table   width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout2" <?php if($valTypeC2 == 2){ ?> style="display:none;" <?php } ?>>
+    <tr >
+    <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+    <span class="formFontSubjectTxt"><?php echo $langMod["txt:video"]?> 2</span><br/>
+    <span class="formFontTileTxt"><?php echo $langMod["txt:videoDe"]?></span>    </td>
+    </tr>
+                            <tr ><td colspan="7" align="right"  valign="top"   height="15" ></td></tr>
+
+      <tr >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:typevdo"]?></td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
+    <label>
+    <div class="formDivRadioL"><input name="inputType2" id="inputType2" value="url" type="radio"  class="formRadioContantTb" onclick="jQuery('#boxInputfilevdo2').hide();jQuery('#boxInputlinkvdo2').show();" <?php if($valType2=="url"){?> checked="checked" <?php }?>  /></div>
+    <div class="formDivRadioR"><?php echo $langMod["tit:linkvdo"]?></div>
+    </label>
+
+    <label>
+    <div class="formDivRadioL"><input name="inputType2" id="inputType2"  value="file"  type="radio"  class="formRadioContantTb" onclick="jQuery('#boxInputlinkvdo2').hide();jQuery('#boxInputfilevdo2').show();" <?php if($valType2=="file"){?> checked="checked" <?php }?>  /></div>
+    <div class="formDivRadioR"><?php echo $langMod["tit:uploadvdo"]?></div>
+    </label>
+    </label>   </td>
+      </tr>
+  <tr id="boxInputlinkvdo2"   <?php if($valType2=="file" ){?> style="display:none;" <?php }?>>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" >ลิงค์ Youtube</td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><textarea name="inputurl2" id="inputurl2" cols="45" rows="5" class="formTextareaContantTb"><?php echo $valUrl2?></textarea><br />
+		<span class="formFontNoteTxt"><?php echo $langMod["tit:linkvdonote"]?></span></td>
+  </tr>
+    <tr id="boxInputfilevdo2"  <?php if($valType2=="url"){?> style="display:none;" <?php }?>>
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:uploadvdo"]?></td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
+    <div class="file-input-wrapper">
+  <button class="btn-file-input"><?php echo $langTxt["us:inputpicselect"]?></button>
+  <input type="file" name="inputVideoUpload2" id="inputVideoUpload2" onchange="ajaxVideoUpload2();" />
+</div>
+
+<span class="formFontNoteTxt"><?php echo $langMod["tit:uploadvdonote"]?></span>
+<div class="clearAll"></div>
+<div id="boxVideoNew2" class="formFontTileTxt">
+<?php if(is_file($valPathvdo2)){
+			$linkRelativePath = $valPathvdo2;
+			$imageType = strstr($valFilevdo2,'.');
+?>
+		 	<a href="javascript:void(0)"  onclick=" delVideoUpload2('deleteVideo2.php')" ><img src="../img/btn/delete.png" align="absmiddle" title="Delete file"  hspace="10"  vspace="10"   border="0" /></a>Video Upload | <?php echo $langMod["file:type"]?>: <?php echo $imageType?>  | <?php echo $langMod["file:size"]?>: <?php echo get_IconSize($linkRelativePath)?>
+  <input type="hidden" name="picname2" id="picname2" value="<?php echo $valFilevdo2?>" />
+  <?php }?>
+</div></td>
+  </tr>
+       </table>
+
          <br class="ckabout" <?php if($valTypeC == 2){ ?> style="display:none;" <?php } ?>/>
 <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout" <?php if($valTypeC == 2){ ?> style="display:none;" <?php } ?>>
     <tr >
@@ -759,6 +825,33 @@ jQuery(document).ready(function(){
 <span class="formFontNoteTxt"><?php echo $langMod["inp:seokeynote"]?></span></td>
   </tr>
   </table>
+
+  <br class="ckabout2"<?php if($valTypeC2 == 2){ ?> style="display:none;" <?php } ?>/>
+				
+<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ckabout2" <?php if($valTypeC2 == 2){ ?> style="display:none;" <?php } ?>>
+    <tr >
+    <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+    <span class="formFontSubjectTxt"><?php echo $langMod["txt:seo"]?> 2</span><br/>
+    <span class="formFontTileTxt"><?php echo $langMod["txt:seoDe"]?></span>    </td>
+    </tr>
+                            <tr ><td colspan="7" align="right"  valign="top"   height="15" ></td></tr>
+
+  <tr >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["inp:seotitle"]?><span class="fontContantAlert"></span></td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="inputTagTitle2" id="inputTagTitle2" type="text"  class="formInputContantTb" value="<?php echo $valMetatitle2?>"/><br />
+<span class="formFontNoteTxt"><?php echo $langMod["inp:seotitlenote"]?></span></td>
+  </tr>
+  <tr >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["inp:seodes"]?><span class="fontContantAlert"></span></td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="inputTagDescription2" id="inputTagDescription2"  type="text"  class="formInputContantTb" value="<?php echo $valDescription2?>"/><br />
+<span class="formFontNoteTxt"><?php echo $langMod["inp:seodesnote"]?></span></td>
+  </tr>
+  <tr >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["inp:seokey"]?><span class="fontContantAlert"></span></td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="inputTagKeywords2" id="inputTagKeywords2"  type="text"  class="formInputContantTb" value="<?php echo $valKeywords2?>"/><br />
+<span class="formFontNoteTxt"><?php echo $langMod["inp:seokeynote"]?></span></td>
+  </tr>
+  </table>
          <br />
 <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
     <tr >
@@ -770,9 +863,17 @@ jQuery(document).ready(function(){
 
   <tr >
     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:credate"]?><span class="fontContantAlert"></span></td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="cdateInput" id="cdateInput" type="text"  class="formInputContantTbShot" value="<?php echo $valcredate?>"/></td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="cdateInput" id="cdateInput" type="text"  class="formInputContantTbShot datepick" value="<?php echo $valcredate?>"/></td>
+  </tr>
+
+  <tr ><td colspan="7" align="right"  valign="top"   height="15" ></td></tr>
+
+  <tr >
+    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:credate"]?><span class="fontContantAlert"></span></td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="cdateInput2" id="cdateInput2" type="text"  class="formInputContantTbShot datepick" value="<?php echo $valcredate2?>"/></td>
   </tr>
   </table>
+  
          <br />
 <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
     <tr >
@@ -784,15 +885,25 @@ jQuery(document).ready(function(){
 
   <tr >
     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:sdate"]?><span class="fontContantAlert"></span></td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="sdateInput" id="sdateInput" type="text"  class="formInputContantTbShot" value="<?php echo $valSdate?>"/></td>
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="sdateInput" id="sdateInput" type="text"  class="formInputContantTbShot datepick" value="<?php echo $valSdate?>"/></td>
   </tr>
   <tr >
     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:edate"]?><span class="fontContantAlert"></span></td>
-    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="edateInput" id="edateInput"  type="text"  class="formInputContantTbShot" value="<?php echo $valEdate?>"/><br />
+    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="edateInput" id="edateInput"  type="text"  class="formInputContantTbShot datepick" value="<?php echo $valEdate?>"/><br />
 <span class="formFontNoteTxt"><?php echo $langMod["inp:notedate"]?></span></td>
   </tr>
 
+  <tr ><td colspan="7" align="right"  valign="top"   height="15" ></td></tr>
 
+<tr >
+  <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:sdate"]?> 2<span class="fontContantAlert"></span></td>
+  <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="sdateInput2" id="sdateInput2" type="text"  class="formInputContantTbShot datepick" value="<?php echo $valSdate2?>"/></td>
+</tr>
+<tr >
+  <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:edate"]?> 2<span class="fontContantAlert"></span></td>
+  <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><input name="edateInput2" id="edateInput2"  type="text"  class="formInputContantTbShot datepick" value="<?php echo $valEdate2?>"/><br />
+<span class="formFontNoteTxt"><?php echo $langMod["inp:notedate"]?></span></td>
+</tr>
 
 
   </table>
@@ -958,6 +1069,48 @@ jQuery(document).ready(function(){
 						{
 							jQuery("#boxVideoNew").show();
 							jQuery("#boxVideoNew").html(data.msg);
+							setTimeout(jQuery.unblockUI, 200);
+						}
+					}
+				},
+				error: function (data, status, e)
+				{
+					alert(e);
+				}
+			}
+		)
+		return false;
+
+	}
+
+	/*################################# Upload Video 2 #######################*/
+	function ajaxVideoUpload2(){
+		var valuevdoname = jQuery("input#vdoname2").val();
+
+		 jQuery.blockUI({
+				message: jQuery('#tallContent'),
+				css: { border: 'none',padding: '35px',backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .9, color: '#fff'
+				}
+			});
+
+
+		jQuery.ajaxFileUpload({
+				url:'loadUpdateVideo2.php?myID=<?php echo $_POST["valEditID"]?>&masterkey=<?php echo $_REQUEST['masterkey']?>&langt=<?php echo $_REQUEST['inputLt']?>&delvdoname2='+valuevdoname+'&menuid=<?php echo $_REQUEST['menukeyid']?>',
+				secureuri:false,
+				fileElementId:'inputVideoUpload2',
+				dataType: 'json',
+				success: function (data, status){
+					if(typeof(data.error) != 'undefined')
+					{
+
+						if(data.error != '')
+						{
+							alert(data.error);
+
+						}else
+						{
+							jQuery("#boxVideoNew2").show();
+							jQuery("#boxVideoNew2").html(data.msg);
 							setTimeout(jQuery.unblockUI, 200);
 						}
 					}

@@ -9,6 +9,11 @@ $config['tgp']['masterkey'] = "tg";
 
 $config['cmf']['db']['main'] = "md_cmf";
 
+$config['cma']['db'] = "md_cma";
+
+$config['cmstest']['db'] = "md_cmstest";
+$config['cmstest']['masterkey'] = "cms";
+
 $mainPage = new mainPage();
 
 class mainPage

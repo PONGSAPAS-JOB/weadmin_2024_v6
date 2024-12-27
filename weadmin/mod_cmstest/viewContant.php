@@ -15,10 +15,13 @@ $valLinkNav1 = "../core/index.php";
 $sql = "SELECT   ";
 $sql .= "   " . $mod_tb_root . "_id as id ,
       " . $mod_tb_root . "_credate as credate,
+      " . $mod_tb_root . "_credate2 as credate2,
       " . $mod_tb_root . "_crebyid as crebyid,
       " . $mod_tb_root . "_status as status,
       " . $mod_tb_root . "_sdate as sdate,
       " . $mod_tb_root . "_edate as edate,
+      " . $mod_tb_root . "_sdate2 as sdate2,
+      " . $mod_tb_root . "_edate2 as edate2,
       " . $mod_tb_root . "_lastdate as lastdate,
       " . $mod_tb_root . "_lastbyid as lastbyid,
       " . $mod_tb_root . "_pic as pic ,
@@ -26,11 +29,14 @@ $sql .= "   " . $mod_tb_root . "_id as id ,
       " . $mod_tb_root . "_type as type,
       " . $mod_tb_root . "_filevdo as filevdo,
       " . $mod_tb_root . "_url as url ,
+      " . $mod_tb_root . "_type2 as type2,
+      " . $mod_tb_root . "_filevdo2 as filevdo2,
+      " . $mod_tb_root . "_url2 as url2 ,
       " . $mod_tb_root . "_view as view,
       " . $mod_tb_root . "_gid as gid    ";
 
       if($_REQUEST['inputLt']=="Thai"){
-        $sql .= " , ".$mod_tb_root."_subject as subject , ".$mod_tb_root."_subject2 as subject2  ,    ".$mod_tb_root."_title as title , ".$mod_tb_root."_title2 as title2, ".$mod_tb_root."_htmlfilename as htmlfilename  , ".$mod_tb_root."_htmlfilename2 as htmlfilename2  ,    ".$mod_tb_root."_metatitle  as	metatitle 	,    ".$mod_tb_root."_description as description  ,    ".$mod_tb_root."_keywords as keywords   ";
+        $sql .= " , ".$mod_tb_root."_subject as subject , ".$mod_tb_root."_subject2 as subject2  ,    ".$mod_tb_root."_title as title , ".$mod_tb_root."_title2 as title2, ".$mod_tb_root."_htmlfilename as htmlfilename  , ".$mod_tb_root."_htmlfilename2 as htmlfilename2  ,    ".$mod_tb_root."_metatitle  as	metatitle 	,    ".$mod_tb_root."_description as description  ,    ".$mod_tb_root."_keywords as keywords   ,    ".$mod_tb_root."_metatitle2  as	metatitle2 	,    ".$mod_tb_root."_description2 as description2  ,    ".$mod_tb_root."_keywords2 as keywords2   ";
     }elseif($_REQUEST['inputLt']=="Eng"){
         $sql .= " , ".$mod_tb_root."_subjecten as subjecten  ,    ".$mod_tb_root."_titleen as titleen , ".$mod_tb_root."_htmlfilenameen as htmlfilenameen   ,    ".$mod_tb_root."_metatitleen as metatitleen  ,    ".$mod_tb_root."_descriptionen as descriptionen 	 ,    ".$mod_tb_root."_keywordsen as keywordsen   ";
     }else{
@@ -43,6 +49,7 @@ $sql .= "   " . $mod_tb_root . "_id as id ,
 $Row = wewebFetchArrayDB($coreLanguageSQL,$Query);
 $valID = $Row['id'];
 $valCredate = DateFormat($Row['credate']);
+$valCredate2 = DateFormat($Row['credate2']);
 $valCreby = $Row['crebyid'];
 $valStatus = $Row['status'];
 if ($valStatus == "Enable") {
@@ -64,6 +71,17 @@ if ($Row['edate'] == "0000-00-00 00:00:00") {
     $valEdate = DateFormatReal($Row['edate']);
 }
 
+if ($Row['sdate2'] == "0000-00-00 00:00:00") {
+    $valSdate2 = "-";
+} else {
+    $valSdate2 = DateFormatReal($Row['sdate2']);
+}
+if ($Row['edate2'] == "0000-00-00 00:00:00") {
+    $valEdate2 = "-";
+} else {
+    $valEdate2 = DateFormatReal($Row['edate2']);
+}
+
 $valLastdate = DateFormat($Row['lastdate']);
 $valLastby = $Row['lastbyid'];
 
@@ -72,9 +90,13 @@ $valPic = $mod_path_pictures . "/" . $Row['pic'];
 $valPicName2 = $Row['pic2'];
 $valPic2 = $mod_path_pictures . "/" . $Row['pic2'];
 $valType = $Row['type'];
+$valType2 = $Row['type2'];
 $valFilevdo = $Row['filevdo'];
 $valPathvdo = $mod_path_vdo . "/" . $Row['filevdo'];
+$valFilevdo2 = $Row['filevdo2'];
+$valPathvdo2 = $mod_path_vdo . "/" . $Row['filevdo2'];
 $valUrl = rechangeQuot($Row['url']);
+$valUrl2 = rechangeQuot($Row['url2']);
 $valView = number_format($Row['view']);
 
 $valGid = $Row['gid'];
@@ -88,6 +110,9 @@ $valHtml2 = $mod_path_html . "/" . $Row['htmlfilename2'];
 $valMetatitle = rechangeQuot($Row['metatitle']);
 $valDescription = rechangeQuot($Row['description']);
 $valKeywords = rechangeQuot($Row['keywords']);
+$valMetatitle2 = rechangeQuot($Row['metatitle2']);
+$valDescription2 = rechangeQuot($Row['description2']);
+$valKeywords2 = rechangeQuot($Row['keywords2']);
 $valPicShow = $Row['picshow'];
 $valTypec= $Row['typec'];
 $valUrlc = $Row['urlc'];
@@ -362,7 +387,7 @@ logs_access('3', 'View');
                                                 <?php }
                                             } else { ?>
                                                 -
-<?php } ?>
+                                            <?php } ?>
                                         </div></td>
                                 </tr>
                             </table>
@@ -392,7 +417,7 @@ logs_access('3', 'View');
                                                     $imageType = strstr($downloadFile, '.');
                                                     ?>
                                                     <?php if ($_REQUEST['viewID'] <= 0) { ?>
-                                                        <a rel="viewAlbum"  title=""  href="<?php echo $mod_path_album . "/reB2_" . $downloadFile ?>">
+                                                        <a rel="viewAlbum2"  title=""  href="<?php echo $mod_path_album . "/reB2_" . $downloadFile ?>">
                                                             <img src="<?php echo $mod_path_album . "/reO2_" . $downloadFile ?>"  width="50" height="50"   style="float:left;border:#c8c7cc solid 1px;margin-bottom:15px;margin-right:15px;"  /></a>
                                                     <?php } else { ?>
                                                         <img src="<?php echo $mod_path_album . "/reO2_" . $downloadFile ?>"  width="50" height="50"   style="float:left;border:#c8c7cc solid 1px;margin-bottom:15px;margin-right:15px;"  />
@@ -400,7 +425,7 @@ logs_access('3', 'View');
                                                 <?php }
                                             } else { ?>
                                                 -
-<?php } ?>
+                                            <?php } ?>
                                         </div></td>
                                 </tr>
                             </table>
@@ -434,10 +459,48 @@ logs_access('3', 'View');
                                                     $myUrlCutAnd = $myUrlCutArray[0];
                                                     ?>
                                                     <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/<?php echo $myUrlCutAnd ?>" frameborder="0" allowfullscreen  style="z-index:-1999; "></iframe>
-    <?php } else { ?>
+                                                    <?php } else { ?>
                                                     -
-    <?php }
-} ?>
+                                                    <?php }
+                                                    } ?>
+
+                                        </div></td>
+                                </tr>
+                            </table>
+                            <br <?php if($valTypec2 == 2){ ?> style="display:none;" <?php } ?> />
+                            <table  width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php if($valTypec2 == 2){ ?> style="display:none;" <?php } ?>>
+                                <tr >
+                                    <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:video"] ?> 2</span><br/>
+                                        <span class="formFontTileTxt"><?php echo $langMod["txt:videoDe"] ?></span>    </td>
+                                </tr>
+                                <tr >
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["txt:video"] ?>:<span class="fontContantAlert"></span></td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView">
+                                            <?php
+                                            if ($valType2 == "file") {
+                                                if ($valFilevdo2 != "") {
+                                                    $filename = $valFilevdo2;
+                                                    $arrstrfile = explode(".", $valFilevdo2);
+                                                    $filetype = strtolower($arrstrfile[sizeof($arrstrfile) - 1]);
+                                                    ?>
+                                                    <div id="areaPlayer2" style="z-index:-1999; "></div>
+                                                <?php } else { ?>
+                                                    -
+                                                <?php
+                                                }
+                                            } else {
+                                                if ($valUrl2 != "") {
+                                                    $myUrlArray = explode("v=", $valUrl2);
+                                                    $myUrlCut = $myUrlArray[1];
+                                                    $myUrlCutArray = explode("&", $myUrlCut);
+                                                    $myUrlCutAnd = $myUrlCutArray[0];
+                                                    ?>
+                                                    <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/<?php echo $myUrlCutAnd ?>" frameborder="0" allowfullscreen  style="z-index:-1999; "></iframe>
+                                             <?php } else { ?>
+                                                    -
+                                                 <?php }
+                                                    } ?>
 
                                         </div></td>
                                 </tr>
@@ -536,6 +599,26 @@ logs_access('3', 'View');
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valKeywords ?></div></td>
                                 </tr>
                             </table>
+                            <br <?php if($valTypec2 == 2){ ?> style="display:none;" <?php } ?> />
+                            <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder " <?php if($valTypec2 == 2){ ?> style="display:none;" <?php } ?>>
+                                <tr >
+                                    <td colspan="7" align="left"  valign="middle" class="formTileTxt tbBoxViewBorderBottom">
+                                        <span class="formFontSubjectTxt"><?php echo $langMod["txt:seo"] ?> 2</span><br/>
+                                        <span class="formFontTileTxt"><?php echo $langMod["txt:seoDe"] ?></span>    </td>
+                                </tr>
+                                <tr >
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["inp:seotitle"] ?>:<span class="fontContantAlert"></span></td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valMetatitle2 ?></div></td>
+                                </tr>
+                                <tr >
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["inp:seodes"] ?>:<span class="fontContantAlert"></span></td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valDescription2 ?></div></td>
+                                </tr>
+                                <tr >
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["inp:seokey"] ?>:<span class="fontContantAlert"></span></td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valKeywords2 ?></div></td>
+                                </tr>
+                            </table>
                             <br />
                             <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center" class="tbBoxViewBorder ">
                                 <tr >
@@ -550,6 +633,15 @@ logs_access('3', 'View');
                                 <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:edate"] ?>:<span class="fontContantAlert"></span></td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valEdate ?></div> </td>
+                                </tr>
+                                <br/>
+                                <tr >
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:sdate"] ?> 2:<span class="fontContantAlert"></span></td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valSdate2 ?></div></td>
+                                </tr>
+                                <tr >
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langMod["tit:edate"] ?> 2:<span class="fontContantAlert"></span></td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView"><?php echo $valEdate2 ?></div> </td>
                                 </tr>
 
 
@@ -580,6 +672,11 @@ logs_access('3', 'View');
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:credate"] ?>:</td>
                                     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
                                         <div class="formDivView"><?php echo $valCredate ?></div>         </td>
+                                </tr>
+                                <tr >
+                                    <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:credate"] ?> 2:</td>
+                                    <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
+                                        <div class="formDivView"><?php echo $valCredate2 ?></div>         </td>
                                 </tr>
                                 <tr >
                                     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?php echo $langTxt["us:creby"] ?>:</td>
@@ -653,6 +750,17 @@ logs_access('3', 'View');
                                                                                       });
                                                                                   });
                         </script>
+
+<script type="text/javascript">
+                                                                                  jQuery(function () {
+                                                                                      jQuery('a[rel=viewAlbum2]').fancybox({
+                                                                                          'padding': 0,
+                                                                                          'transitionIn': 'fade',
+                                                                                          'transitionOut': 'fade',
+                                                                                          'autoSize': false,
+                                                                                      });
+                                                                                  });
+                        </script>
 <?php } ?>
 
                     <script type='text/javascript' src='../<?php echo $mod_fd_root ?>/swfobject.js'></script>
@@ -669,6 +777,35 @@ logs_access('3', 'View');
                                                                                   s1.addParam('allowscriptaccess', 'always');
                                                                                   s1.addParam('flashvars', 'file=<?php echo $mod_path_vdo ?>/' + filename);
                                                                                   s1.write('areaPlayer');
+                                                                              } else/* if(filetype=="wmv")*/ {
+
+                                                                                  var src = '../<?php echo $mod_fd_root ?>/wmvplayer.xaml';
+                                                                                  var cfg = "";
+                                                                                  var ply;
+                                                                                  cfg = {
+                                                                                      file: '<?php echo $mod_path_vdo ?>/' + filename,
+                                                                                      image: '',
+                                                                                      height: '315',
+                                                                                      width: '560',
+                                                                                      autostart: "false",
+                                                                                      windowless: 'true',
+                                                                                      showstop: 'true'
+                                                                                  };
+                                                                                  ply = new jeroenwijering.Player(cnt, src, cfg);
+                                                                              }
+                    </script>
+
+<script type='text/javascript'>
+                                                                              var filename = "<?php echo $filename ?>";
+                                                                              var filetype = "<?php echo $filetype ?>";
+                                                                              var cnt = document.getElementById("areaPlayer2");
+                                                                              if (filetype == "flv") {
+                                                                                  var s1 = new SWFObject('../<?php echo $mod_fd_root ?>/player.swf', 'player', '560', '315', '9');
+                                                                                  s1.addParam('allowfullscreen', 'true');
+                                                                                  s1.addParam('wmode', 'transparent');
+                                                                                  s1.addParam('allowscriptaccess', 'always');
+                                                                                  s1.addParam('flashvars', 'file=<?php echo $mod_path_vdo ?>/' + filename);
+                                                                                  s1.write('areaPlayer2');
                                                                               } else/* if(filetype=="wmv")*/ {
 
                                                                                   var src = '../<?php echo $mod_fd_root ?>/wmvplayer.xaml';

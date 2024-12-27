@@ -65,6 +65,9 @@ include("config.php");
 			$update[] = $mod_tb_root . "_description='" . changeQuot($_POST['inputTagDescription']) . "'";
 			$update[] = $mod_tb_root . "_keywords='" . changeQuot($_POST['inputTagKeywords']) . "'";
 			$update[] = $mod_tb_root . "_metatitle='" . changeQuot($_POST['inputTagTitle']) . "'";
+			$update[] = $mod_tb_root . "_description2='" . changeQuot($_POST['inputTagDescription2']) . "'";
+			$update[] = $mod_tb_root . "_keywords2='" . changeQuot($_POST['inputTagKeywords2']) . "'";
+			$update[] = $mod_tb_root . "_metatitle2='" . changeQuot($_POST['inputTagTitle2']) . "'";
 		} else if ($_REQUEST['inputLt'] == "Eng") {
 			$update[] = $mod_tb_root . "_subjecten='" . changeQuot($_POST['inputSubject']) . "'";
 			$update[] = $mod_tb_root . "_titleen='" . changeQuot($_POST['inputDescription']) . "'";
@@ -87,6 +90,8 @@ include("config.php");
 
 		$update[] = $mod_tb_root . "_type='" . $_POST["inputType"] . "'";
 		$update[] = $mod_tb_root . "_url='" . changeQuot($_REQUEST['inputurl']) . "'";
+		$update[] = $mod_tb_root . "_type2='" . $_POST["inputType2"] . "'";
+		$update[] = $mod_tb_root . "_url2='" . changeQuot($_REQUEST['inputurl2']) . "'";
 		$update[] = $mod_tb_root . "_lastbyid='" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";
 		$update[] = $mod_tb_root . "_lastby='" . $_SESSION[$valSiteManage . 'core_session_name'] . "'";
 		if ($_REQUEST['cdateInput'] != "") {
@@ -96,8 +101,17 @@ include("config.php");
 		}
 
 		$update[] =	$mod_tb_root . "_lastdate=NOW()";
+
+		if ($_REQUEST['cdateInput2'] != "") {
+			$update[] = $mod_tb_root . "_credate2  	='" . DateFormatInsertCre($_REQUEST['cdateInput2']) . "'";
+		} else {
+			$update[] = $mod_tb_root . "_credate2=NOW()";
+		}
+
 		$update[] =	$mod_tb_root . "_sdate  	='" . DateFormatInsert($sdateInput) . "'";
 		$update[] =	$mod_tb_root . "_edate  	='" . DateFormatInsert($edateInput) . "'";
+		$update[] =	$mod_tb_root . "_sdate2  	='" . DateFormatInsert($sdateInput2) . "'";
+		$update[] =	$mod_tb_root . "_edate2  	='" . DateFormatInsert($edateInput2) . "'";
 		$update[] = $mod_tb_root . "_typec = '" . $_REQUEST["inputTypeC"] . "'";
 		$update[] = $mod_tb_root . "_urlc = '" . $_REQUEST["inputurlc"] . "'";
 		$update[] = $mod_tb_root . "_target  	='" . $_POST['inputTarget'] . "'";
