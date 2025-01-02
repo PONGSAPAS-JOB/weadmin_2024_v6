@@ -7,7 +7,7 @@
     <div class="desc">Related Information System</div>
     <img src="../weadmin_2024_v5/upload/core/pic-bg-20241226173518642127-1.png" alt="Related Information System">
 </div>
-
+<a class="link" href="../weadmin_2024_v5/new">กด</a>
 <h1>======================================================================================================</h1>
 <ul>
     {foreach $callTopGraphic as $keycallTopGraphic => $valuecallTopGraphic}
@@ -18,11 +18,3 @@
     {/foreach}
 </ul>
 <h1>======================================================================================================</h1>
-<ul>
-    {foreach $callCmsTest as $keycallCmsTest => $valuecallCmsTest}
-        <li>{$valuecallCmsTest.subject}</li>
-        <li>{$valuecallCmsTest.subject2}</li>
-        <li><img src="../weadmin_2024_v5/upload/cms/pictures/{$valuecallCmsTest.pic}" alt="{$valuecallCmsTest.pic}"></li>
-        <h2>======================================================================================================</h2>
-    {/foreach}
-</ul>

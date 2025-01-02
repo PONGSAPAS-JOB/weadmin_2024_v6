@@ -6,11 +6,16 @@ $lang['menu']['memorial'] = "เรื่องราวในความทร
 $lang['menu']['gallery'] = "ภาพในความทรงจำ";
 $lang['menu']['event'] = "กิจกรรมทำความดี";
 $lang['menu']['product'] = "สินค้า";
+$lang['menu']['new'] = "new Page";
 $lang['menu']['faq'] = "คำถามที่พบบ่อย";
 $lang['menu']['about'] = "เกี่ยวกับเรา";
 $lang['menu']['favorite'] = "สิ่งที่อยากได้";
 $lang['menu']['blog'] = "Blog";
 $lang['menu']['noti'] = "แจ้งเตือน ";
+
+$lang["post:last"] = "ล่าสุด";
+$lang["post:old"] = "เก่าสุด";
+$lang['btn:backdesc'] = "กลับ";
 
 $lang['menu']['send_option_1'] = "รับที่ร้าน";
 $lang['menu']['send_option_2'] = "จัดส่ง";
