@@ -1,0 +1,41 @@
+.topgraphic{
+    margin-top: 120px;
+    overflow: hidden;
+    position: relative;
+    figure.cover{padding-bottom: 50%;}
+    .slick-dots{
+        width: auto;
+        top: 50%;
+        right: 0;
+        bottom: inherit;
+        transform: translate(0, -50%);
+        li{
+            width: 100%;
+            position: relative;
+            border: none;
+            & + li{
+                padding-top: 80px;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: 1px;
+                    height: 100%;
+                    background-color: $color-border;
+                }
+            }
+            &.slick-active{
+                button{
+                    font-size: 60px;
+                }
+            }
+            button{
+                font-size: 30px;
+                line-height: 1em;
+                color: $color-primary;
+                background-color: $color-none;
+                transition: all 400ms;
+            }
+        }
+    }
+}

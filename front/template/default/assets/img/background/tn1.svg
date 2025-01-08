@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="457" height="526" viewBox="0 0 457 526">
+  <defs>
+    <clipPath id="clip-tn1">
+      <rect width="457" height="526"/>
+    </clipPath>
+  </defs>
+  <g id="tn1" clip-path="url(#clip-tn1)">
+    <path id="Intersection_125" data-name="Intersection 125" d="M822.718,0,582.085,665.743,402.888,146.81Q379.3,62.169,333.022,0H0V34.857c91.013-10.736,186.85,32.075,215.915,117.79,63.233,186.51,298.846,882.814,339.752,1003.714a26.427,26.427,0,0,0,25.086,17.949h5.1a26.516,26.516,0,0,0,25.03-17.782L1013.7,0ZM101.492,545l12.453-22.755a8.323,8.323,0,0,0-7.336-12.36c-5.137.051-11.511.006-18.862-.26Z" transform="translate(1215.311 -312) rotate(90)" fill="#c00000"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+.form-default{
+    .transition-ease{
+        -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+        -o-transition: all 200ms ease-out;
+        -ms-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+    }
+    .form-group{position: relative;margin-bottom: 20px;}
+    .control-label{margin-bottom: 10px;font-weight: normal;font-size: 14px;color: #333;line-height: 1.2em;}
+    .form-control{line-height: 1.2em; padding: 10px 35px 10px 20px;  font-size: 24px; color: #333;min-height: 50px;background-color: #fff; border: 1px solid #EBEBEB;
+        @include border-radius(0px);
+        @include box-shadow(none);
+        &:focus{border-color: $color-primary;}
+    }
+    .floating-label{color: $color-primary; font-size: 14px;position: absolute;pointer-events: none;left: 15px;top: 9px;
+        @extend .transition-ease;
+    }
+    .form-control:focus ~ .floating-label,
+    .form-control:not(:focus):valid ~ .floating-label{color: #333; font-size: 12px; left: 0; top: -22px;}
+    .block-control{position: relative;}
+    .has-error{
+        .form-control:focus{@include box-shadow(none);}
+    }
+    .has-success{
+        .form-control:focus{@include box-shadow(none);}
+    }
+}
+.form-control-feedback{position: absolute;top: 15px;right: 10px;width: 20px;height: 20px;background-size: 100%;
+    &:before{display: none;}
+    &.glyphicon-ok{
+        background: url('../img/icon/checked.png') center no-repeat;background-size: 16px;
+    }
+    &.glyphicon-remove{
+        background: url('../img/icon/cancel.png') center no-repeat;background-size: 16px;
+    }
+}

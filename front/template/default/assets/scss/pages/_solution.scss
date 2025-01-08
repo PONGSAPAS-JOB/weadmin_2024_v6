@@ -1,0 +1,101 @@
+.solution-page{
+    margin-top: -47px;
+    .solution{
+        min-height: 600px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .product-service{
+        .wrapper{
+            .title{
+                line-height: 1em;
+                &.text-limit{
+                    max-height: calc(1em * 2);
+                    -webkit-line-clamp: 2;
+                }
+            }  
+            .action{
+                position: absolute;
+                bottom: 22px;
+            }
+        } 
+    } 
+    .solution-list{
+        .wrapper{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background-color: $color-light;
+        }
+        .content{
+            width: 33%;
+            padding: 50px 28px 18px 39px;
+            position: relative;
+            z-index: 1;
+            .title-block{
+                position: relative;
+                width: 200%;
+                max-height: 200px;
+                .title{
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    font-size: 125px;
+                    font-weight: bold;
+                    line-height: 0.8em;
+                    text-transform: uppercase;
+                    max-width: 710px;
+                    &.text-limit{
+                        max-height: calc(0.8em * 2);
+                        -webkit-line-clamp: 2;
+                    }
+                }
+            }
+            .desc{
+                font-size: 30px;
+                font-weight: 300;
+                line-height: 1em;
+                min-height: 7em;
+                &.text-limit{
+                    max-height: calc(1em * 7);
+                    -webkit-line-clamp: 7;
+                }
+            }
+            .action{
+                margin-top: 30px;
+            }
+        }
+        .image{
+            width: 67%;
+            height: 600px;
+            .cover{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                img{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .slick-prev, 
+        .slick-next{
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+        }
+        .slick-prev{left: -80px;}
+        .slick-next{right: -80px;}
+        .slick-dots{
+            bottom: -47px;
+            li{margin: 0 10px;}
+        }
+    }
+}

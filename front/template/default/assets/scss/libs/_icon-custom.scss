@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'icon-custom';
+    src: url('../font/icon-custom/icon-custom.eot?6zuk5d');
+    src: url('../font/icon-custom/icon-custom.eot?6zuk5d#iefix') format('embedded-opentype'),
+      url('../font/icon-custom/icon-custom.ttf?6zuk5d') format('truetype'),
+      url('../font/icon-custom/icon-custom.woff?6zuk5d') format('woff'),
+      url('../font/icon-custom/icon-custom.svg?6zuk5d#icon-custom') format('svg');
+    font-weight: normal; font-style: normal; font-display: block;
+}
+[class^="ic-"],[class*="ic-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icon-custom' !important; speak: never; line-height: 1;
+    font-style: normal; font-weight: normal; font-variant: normal; text-transform: none;
+    
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.ic-facebook:before {content: "\e94b";}
+.ic-social-fb:before {content: "\e90c";}
+.ic-social-ig:before {content: "\e90d";}
+.ic-social-line:before {content: "\e90e";}
+.ic-social-youtube:before {content: "\e910";}
+.ic-social-x:before {content: "\e924";}

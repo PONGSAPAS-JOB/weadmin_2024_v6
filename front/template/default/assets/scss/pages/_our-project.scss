@@ -1,0 +1,58 @@
+.our-project-page{
+    .our-project{margin-top: -47px;}
+    .product-service{
+        .item-list{margin: 0 -20px;}
+        li{
+            width: calc(100% / 3);
+            padding: 0 20px;
+            margin-top: 40px;
+        }
+        .link{
+            &:hover{
+                .title{
+                    &.under-line:before{background-color: $color-light;}
+                }
+                .image{
+                    .cover{
+                        img{filter: grayscale(0);}
+                    }
+                } 
+            }
+        }
+        .wrapper{
+            border: 1px solid #EBEBEB;
+            .image{
+                height: 250px;
+                .cover{
+                    img{filter: grayscale(1);}
+                }
+            }
+            .content{
+                height: 190px;
+                background-color: #FBFBFB;
+            }
+            .title{
+                color: $color-dark;
+                &.under-line:before{
+                    background-color: $color-dark;
+                }
+            }
+            .desc{
+                font-weight: bold;
+                min-height: 2em;
+                &.text-limit{
+                    max-height: calc(1em * 2);
+                    -webkit-line-clamp: 2;
+                }
+            }
+            .action{
+                justify-content: flex-start;
+                margin-top: 10px;
+            }
+            .view-more{
+                color: #9b9b9b;
+                img{filter: grayscale(1) brightness(0) invert(0.6);}
+            }
+        }
+    }
+}

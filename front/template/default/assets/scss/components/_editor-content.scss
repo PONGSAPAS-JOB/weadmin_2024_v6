@@ -1,0 +1,17 @@
+.editor-content{
+    .font-base{font-size: var(--typo-md); ; margin-bottom: 15px;line-height: 1.6em}
+    @extend .font-base;
+    p{
+        @extend .font-base;
+        &:last-child{margin-bottom: 0;}
+    }
+    img{height: auto !important;}
+}
+
+
+
+@media (max-width: 991px) {
+  .editor-content .font-base, 
+  .editor-content p, 
+  .editor-content .editor-content {font-size: var(--typo-sm);}
+}

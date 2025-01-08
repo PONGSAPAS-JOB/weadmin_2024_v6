@@ -1,0 +1,37 @@
+
+
+
+@import "../scss/vendors/bootstrap";
+@import "../scss/vendors/normalize";
+@import "../scss/vendors/animation";
+// @import '../scss/vendors/jquery-ui.min';
+
+// @import "../scss/vendors/select2";
+// @import "../scss/vendors/mCustomScrollbar";
+@import "../scss/vendors/fancybox";
+@import "../scss/vendors/slick";
+@import "../scss/vendors/slick-theme";
+// @import "../scss/vendors/fontawesome";
+@import "../scss/vendors/feather";
+// @import "../scss/vendors/ElegantIcons";
+// @import "../scss/vendors/socicon";
+
+
+//////////////////////
+
+
+@import '../scss/libs/_aos';
+@import '../scss/libs/_feather';
+@import '../scss/libs/_fontawesome'; 
+// @import '../scss/libs/_icon-custom'; 
+@import '../scss/libs/_bootstrap';
+@import '../scss/libs/_grid';
+@import '../scss/libs/_swiper-bundle.min';
+@import '../scss/libs/_select2.min';
+
+@import '../scss/config/_variable';
+@import '../scss/config/_base';
+@import '../scss/config/_mixin';
+
+@import '../scss/layouts/_header';
+@import '../scss/layouts/_footer';

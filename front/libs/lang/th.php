@@ -72,6 +72,12 @@ $lang["search:option"] = "ค้นหาทั้งหมด";
 
 $lang['member']['logout'] = "ออกจากระบบ";
 
+$lang["detail"]["gallery"]["th"] = "แกลเลอรี่";
+
+$lang["detail"]["download_doc"]["th"] = "เอกสารดาวน์โหลด";
+
+$lang["detail"]["related_news"]["th"] = "ข่าวสารที่เกี่ยวข้อง";
+$lang["detail"]["related_news"]["en"] = "Related news";
 
 $lang["tit:success"] = "สำเร็จ";
 $lang["tit:success:save"] = "บันทึกข้อมูลเสร็จสิ้น";

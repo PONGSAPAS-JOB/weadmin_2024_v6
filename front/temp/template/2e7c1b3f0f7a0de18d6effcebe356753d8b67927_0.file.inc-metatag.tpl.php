@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2024-11-06 08:59:49
+/* Smarty version 4.3.2, created on 2025-01-07 16:04:35
   from '/var/www/html/weadmin_2024_v5/front/template/default/inc/inc-metatag.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_672acd958f0591_91046837',
+  'unifunc' => 'content_677cee23206070_49639687',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e7c1b3f0f7a0de18d6effcebe356753d8b67927' => 
     array (
       0 => '/var/www/html/weadmin_2024_v5/front/template/default/inc/inc-metatag.tpl',
-      1 => 1730803429,
+      1 => 1736240659,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_672acd958f0591_91046837 (Smarty_Internal_Template $_smarty_tpl) {
+function content_677cee23206070_49639687 (Smarty_Internal_Template $_smarty_tpl) {
 ?><base href="<?php echo $_smarty_tpl->tpl_vars['base']->value;?>
-">
+"> 
 <title><?php echo (($tmp = $_smarty_tpl->tpl_vars['seo']->value['title'] ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['settingWeb']->value['metatitle'] ?? null : $tmp);?>
 </title>
 <meta charset="utf-8">
@@ -36,24 +36,31 @@ function content_672acd958f0591_91046837 (Smarty_Internal_Template $_smarty_tpl)
 <meta name="HandheldFriendly" content="true">
 <meta name="format-detection" content="telephone=no">
 
+<!-- META OPEN GRAPH (FB) -->
 <?php $_smarty_tpl->_assignInScope('valLinkImgSeo', ((string)$_smarty_tpl->tpl_vars['base']->value).((string)$_smarty_tpl->tpl_vars['template']->value)."/assets/img/static/brand.png");?>
 <meta property="og:type" content="website">
-<meta property="og:url" content="">
+<meta property="og:url" content="<?php echo $_smarty_tpl->tpl_vars['fullurl']->value;?>
+">
 <meta property="og:title" content="<?php echo (($tmp = $_smarty_tpl->tpl_vars['valSeoTitle']->value ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['settingWeb']->value['metatitle'] ?? null : $tmp);?>
 ">
 <meta property="og:description" content="<?php echo (($tmp = $_smarty_tpl->tpl_vars['valSeoDescription']->value ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['settingWeb']->value['description'] ?? null : $tmp);?>
 ">
 <meta property="og:image" content="<?php echo (($tmp = $_smarty_tpl->tpl_vars['valSeoImages']->value ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['valLinkImgSeo']->value ?? null : $tmp);?>
 ">
-<meta property="og:site_name" content="">
+<meta property="og:site_name" content="<?php echo (($tmp = $_smarty_tpl->tpl_vars['valSeoTitle']->value ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['settingWeb']->value['metatitle'] ?? null : $tmp);?>
+">
 <meta property="og:locale" content="">
 <meta property="og:locale:alternate" content="">
+<link rel="image_src" href="<?php echo (($tmp = $_smarty_tpl->tpl_vars['valSeoImages']->value ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['valLinkImgSeo']->value ?? null : $tmp);?>
+" />
+
+
 
 
 <?php ob_start();
 echo (($tmp = $_smarty_tpl->tpl_vars['assigncss']->value ?? null)===null||$tmp==='' ? null ?? null : $tmp);
-$_prefixVariable2 = ob_get_clean();
-if ($_prefixVariable2) {
+$_prefixVariable1 = ob_get_clean();
+if ($_prefixVariable1) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['assigncss']->value, 'addAssetCss');
 $_smarty_tpl->tpl_vars['addAssetCss']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['addAssetCss']->value) {

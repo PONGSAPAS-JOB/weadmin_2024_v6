@@ -1,0 +1,34 @@
+/* Start Modify by bonz 04/08/2564 */
+.icon-chevrons-left::before{
+    color: #c00000;
+}
+.modal-dialog{
+    max-width: 860px;
+}
+.modal-body{
+    padding: 2rem;
+}
+
+.download-policy .item + .item{margin-top: 15px;}
+/* End Modify by bonz 04/08/2564 */
+
+.partner .cover img{
+    filter: grayscale(0);
+}
+.social-list-i{
+    position: fixed;
+    top: 50%;
+    left: 30px;
+    z-index: 100;
+}
+
+.social-list-i.inner{
+    position: fixed;
+    top: 270px;
+    left: 30px;
+    z-index: 100;
+}
+.width-img{
+    max-width: 22px;
+}
+

@@ -1,0 +1,22 @@
+.layout-body {margin-top: 120px;}
+
+.h-title {line-height: 1.2em;font-weight: var(--fw-light);letter-spacing: 10px;}
+.desc {line-height: 1.6em;}
+
+
+
+// breakpoints
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+
+}
+@media (max-width: 1199px) {
+
+}
+@media (max-width: 991px) {
+  .layout-body {margin-top: 110px;}
+}
+@media (max-width: 767px) {
+  .layout-body {margin-top: 99px;}
+}

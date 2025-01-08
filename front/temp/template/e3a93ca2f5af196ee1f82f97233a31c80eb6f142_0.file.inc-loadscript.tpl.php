@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2024-11-06 08:59:50
+/* Smarty version 4.3.2, created on 2025-01-06 13:50:59
   from '/var/www/html/weadmin_2024_v5/front/template/default/inc/inc-loadscript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_672acd965e9ab4_91663013',
+  'unifunc' => 'content_677b7d53bfeea4_62300300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3a93ca2f5af196ee1f82f97233a31c80eb6f142' => 
     array (
       0 => '/var/www/html/weadmin_2024_v5/front/template/default/inc/inc-loadscript.tpl',
-      1 => 1730803429,
+      1 => 1736146251,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_672acd965e9ab4_91663013 (Smarty_Internal_Template $_smarty_tpl) {
+function content_677b7d53bfeea4_62300300 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript">var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;<?php echo '</script'; ?>
 >

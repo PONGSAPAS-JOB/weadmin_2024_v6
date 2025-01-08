@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <clipPath id="clip-YouTube-icon">
+      <rect width="22" height="22"/>
+    </clipPath>
+  </defs>
+  <g id="YouTube-icon" clip-path="url(#clip-YouTube-icon)">
+    <g id="_x30_2.YouTube_1_" transform="translate(0.476 3.478)">
+      <path id="Icon_23_" d="M27.066,21.411H13.982A3.982,3.982,0,0,0,10,25.393v7.08a3.981,3.981,0,0,0,3.982,3.982H27.066a3.982,3.982,0,0,0,3.982-3.982V25.393a3.982,3.982,0,0,0-3.982-3.982ZM17.751,32.159V25.706L23.3,28.939Z" transform="translate(-10 -21.411)" fill="#c00000"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+body {font-family: "Noto Sans Thai", sans-serif; background-color: var(--color-light);
+	color: var(--color-default); font-size: var(--typo-default); font-weight: var(--fw-normal); line-height: 1.5em; top: 0 !important;
+}
+
+.h1,.h2,.h3,.h4,.h5,.h6,
+h1,h2,h3,h4,h5,h6 {margin: 0 0 0.5rem 0; font-weight: var(--fw-normal); line-height: 1.5em; color: var(--color-default);}
+
+.h1 strong,.h2 strong,.h3 strong,.h4 strong,.h5 strong,.h6 strong,
+h1 strong,h2 strong,h3 strong,h4 strong,h5 strong,h6 strong{font-weight: var(--fw-bold);}
+
+h1,.h1{font-size: var(--typo-xxl);}
+h2,.h2{font-size: var(--typo-xl);}
+h3,.h3{font-size: var(--typo-lg);}
+h4,.h4{font-size: var(--typo-md);}
+h5,.h5{font-size: var(--typo-sm);}
+h6,.h6{font-size: var(--typo-default);}
+
+p{margin-top: 0; margin-bottom: 1rem; font-weight: var(--fw-normal);}
+p strong,
+strong{font-weight: var(--fw-bold);}
+
+small{font-size: var(--typo-xs);}
+
+figure.cover{position: relative; overflow: hidden;margin: 0;
+	img{position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+		object-fit: cover; object-position: center; transition: var(--transition);
+	}
+}
+figure.contain{position: relative; overflow: hidden;margin: 0;
+	img{position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+		object-fit: contain; object-position: center; transition: var(--transition);
+	}
+}
+
+.text-limit {overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical;
+	// -webkit-line-clamp: 2; max-height: calc(1.5em*2); line-height: 1.5em;
+}
+
+.link{font-weight: var(--fw-semibold);
+	&:hover,
+	&.hover{color: var(--color-secondary); text-decoration: underline;}
+	&:visited,
+	&.visited{color: #51008b;}
+}

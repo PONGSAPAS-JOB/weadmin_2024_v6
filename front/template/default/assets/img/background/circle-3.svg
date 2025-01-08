@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="117.814" height="108" viewBox="0 0 117.814 108">
+  <defs>
+    <filter id="Ellipse_1165" x="6.771" y="0" width="108" height="108" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="red" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="circle-3" transform="translate(1705.771 -4910)">
+    <g id="Group_2891" data-name="Group 2891">
+      <g transform="matrix(1, 0, 0, 1, -1705.77, 4910)" filter="url(#Ellipse_1165)">
+        <g id="Ellipse_1165-2" data-name="Ellipse 1165" transform="translate(15.77 6)" fill="none" stroke="#c00000" stroke-width="2">
+          <circle cx="45" cy="45" r="45" stroke="none"/>
+          <circle cx="45" cy="45" r="44" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_2880" data-name="Group 2880" transform="translate(-1705.771 4980.51)">
+        <path id="Path_7456" data-name="Path 7456" d="M4201.9,13271.616h-10.7v8.737h-7.919" transform="translate(-4180.184 -13271.616)" fill="none" stroke="#c00000" stroke-width="1"/>
+        <ellipse id="Ellipse_1141" data-name="Ellipse 1141" cx="2.5" cy="2.5" rx="2.5" ry="2.5" transform="translate(0 6.596)" fill="#c00000"/>
+      </g>
+      <g id="Group_2886" data-name="Group 2886" transform="translate(-1603.5 4942)">
+        <path id="Path_7457" data-name="Path 7457" d="M4088.914,13313.649h12.628" transform="translate(-4088.914 -13311.299)" fill="none" stroke="#c00000" stroke-width="1"/>
+        <ellipse id="Ellipse_1142" data-name="Ellipse 1142" cx="2.5" cy="2.5" rx="2.5" ry="2.5" transform="translate(10.542)" fill="#c00000"/>
+      </g>
+    </g>
+  </g>
+</svg>

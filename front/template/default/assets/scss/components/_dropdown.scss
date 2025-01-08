@@ -1,0 +1,19 @@
+.dropdown{position: relative;
+    .dropdown-toggle{
+        &:after{content: "\e842"; font-family: "feather"; transition: var(--transition); transform: rotate(0deg); 
+            position: relative; display: inline-block;
+        }
+    }
+    &.open{
+        .dropdown-toggle:after{transform: rotate(-180deg);}
+    }
+}
+.dropdown-menu{transition: var(--transition); position: absolute; z-index: 99; top: 0; opacity: 0; pointer-events: none;
+    min-width: 200px; padding: 0; border: 1px solid var(--color-border);
+    &.show{top: 100%; opacity: 1; pointer-events: visible; background-color: var(--color-light); margin-top: 5px;}
+    li{width: 100%; list-style: none;}
+    li+li{margin-left: 0; border-top: 1px solid #ebebeb;}
+    .link{padding: 10px; display: block;
+        &:hover{background: var(--color-primary); color: var(--color-light); text-decoration: none;}
+    }
+}

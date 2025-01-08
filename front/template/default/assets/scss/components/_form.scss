@@ -1,0 +1,170 @@
+.form-default{position: relative;
+    .form-fieldset{position: relative; padding: 15px; border: 1px solid var(--color-border); border-radius: 8px;}
+    .form-legend{font-weight: var(--fw-bold); font-size: var(--typo-md); color: var(--color-default); line-height: 1.4em; margin-bottom: 25px;}
+    .form-group {position: relative; margin-bottom: 20px; transition: var(--transition);
+        &.has-feedback{
+            .form-label:after,
+            .floating-label:after{content: '*'; margin-left: 3px; color: var(--color-warning);}
+        }
+        // &.has-error{ margin-bottom: 40px;
+        //     .form-control{border-color: var(--color-warning);}
+        //     .form-valid-feedback{top: 100%; height: auto; opacity: 1; visibility: visible;}
+        // }
+    }
+    .form-label { margin-bottom: 10px; font-weight: var(--fw-normal); font-size: var(--typo-xs); color: var(--color-default); 
+        line-height: 1.4em;
+    }
+    .floating-label {color: var(--color-gray); font-size: var(--typo-default); position: absolute; pointer-events: none;
+        left: 15px; top: 14px; transition: var(--transition);
+    }
+    .form-control { line-height: 1.5em; padding: 10px 15px; display: block; width: 100%; min-height: 50px;
+        background-color: var(--color-light); border: 1px solid var(--color-border); border-radius: 0; box-shadow: none;
+        font-size: var(--typo-default); color: var(--color-default); font-weight: var(--fw-normal); transition: var(--transition);
+        &.form-sm{min-height: 40px; font-size: var(--typo-xs);
+            ~ .floating-label {font-size: var(--typo-xs); top: 10px;}
+        }
+        &.form-lg{min-height: 60px; font-size: var(--typo-sm);
+            ~ .floating-label {top: 16px;}
+        }
+        &::-webkit-input-placeholder {color: var(--color-gray); opacity: 1;}
+        &:-ms-input-placeholder {color: var(--color-gray); opacity: 1;}
+        &::placeholder {color: var(--color-gray); opacity: 1;}
+        &:focus,
+        &.active {border-color: var(--color-primary); text-shadow: none; box-shadow: 0 0 8px -4px var(--color-primary);}
+        &:focus-visible {outline: none;}
+        &[disabled]{pointer-events: none; background-color: var(--color-snow);}
+    }
+    .form-note {position: absolute; top: 100%; left: 20px; margin-top: 4px; font-size: var(--typo-xs); color: var(--color-gray);}
+    .block-control {position: relative;}
+    .has-error{
+        .form-control:focus{box-shadow: none;}
+    }
+    .has-success{
+        .form-control:focus{box-shadow: none;}
+    }
+    .password-view{position: absolute; right: 48px; bottom: 12px; z-index: 1;
+        &:before{content: "\f070"; font-family: FontAwesome;}
+        &.show{
+            &:before{content: "\f06e";}
+        }
+    }
+    .calendar-view{position: absolute; right: 20px; bottom: 18px; z-index: 1;}
+    
+    .form-control:focus ~ .floating-label,
+    .form-control:not(:placeholder-shown) ~ .floating-label{color: var(--color-default); font-size: var(--typo-xs); left: 0; top: -22px;}
+    // .form-control-feedback { position: absolute; bottom: 14px; right: 16px; width: 24px; height: 24px; text-transform: none; line-height: 1;
+    //     font-family: "FontAwesome"; font-style: normal; font-weight: normal; font-variant: normal; border-radius: 50%;
+    //     display: flex; align-items: center; justify-content: center;
+    //     -webkit-font-smoothing: antialiased;
+    //     -moz-osx-font-smoothing: grayscale;
+    //     &:before{font-size: var(--typo-xs); color: var(--color-light);}
+    //     &.glyphicon-ok {background-color: var(--color-success);
+    //         &:before{content: "\f00c";}
+    //     }
+    //     &.glyphicon-remove {background-color: var(--color-warning);
+    //         &:before{content: "\f12a";}
+    //     }
+    // }
+    .form-valid-feedback{padding: 0px 8px; border-radius: 4px; font-size: var(--typo-xs); font-weight: var(--fw-normal);
+        background-color: var(--color-warning); color: var(--color-light); display: inline-block; transition: var(--transition);
+        top: 50%; opacity: 0; height: 0; pointer-events: none; visibility: hidden; position: absolute; margin-top: 2px;
+    }
+    .form-button{text-align: right; border-top: 1px solid var(--color-border); padding-top: 20px;}
+}
+
+.radio-control {position: relative; margin-bottom: 20px;
+    .icon{width: 20px; height: 20px; border: 1px solid var(--color-border); background-color: var(--color-light);
+        position: absolute; top: 0; left: 0; border-radius: 50%;
+    }
+    .form-label{ margin: 0; font-size: var(--typo-default); font-weight: var(--fw-normal);
+        color: var(--color-default); padding-left: 30px; line-height: 1.4em; display: block;
+    }
+    input[type="radio"] { margin-top: 0; position: absolute; z-index: 5; opacity: 0; width: 100%; height: 100%;
+        top: 0; left: 0; cursor: pointer;
+        &[disabled]{
+            ~ .icon {border-color: var(--color-border); background-color: var(--color-snow);}
+        }
+        &:checked{
+            ~ .icon { border-color: transparent; border-color: var(--color-border);
+                &:before {content: ""; position: absolute; width: 10px; height: 10px; left: 0;top: 0; right: 0; bottom: 0;
+                    margin: auto; background-color: var(--color-primary); border-radius: 50%;
+                }
+            }
+            &[disabled]{
+                ~ .icon {border-color: var(--color-border); background-color: var(--color-snow);
+                    &:before{background-color: var(--color-gray); }
+                }
+            }
+        }
+    }
+}
+
+.checkbox-control {position: relative; margin-bottom: 20px;
+    .icon { width: 20px; height: 20px; border: 1px solid var(--color-border); background-color: var(--color-light);
+        position: absolute; top: 0; left: 0; border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    }
+    .form-label { margin: 0; font-size: var(--typo-default); font-weight: var(--fw-normal); color: var(--color-default);
+        padding-left: 30px; line-height: 1.4em; display: block;
+    }
+    input[type="checkbox"] { margin-top: 0; position: absolute; opacity: 0; width: 100%; height: 100%;
+        top: 0; left: 0; cursor: pointer;
+        &[disabled]{
+            ~ .icon {border-color: var(--color-border); background-color: var(--color-snow);}
+        }
+        &:checked{
+            ~ .icon {border-color: transparent; background-color: var(--color-primary);
+                font-family: "feather"; font-style: normal; font-weight: normal; font-variant: normal; 
+                &:before{content: "\e83f"; color: var(--color-light); font-size: 18px;}
+            }
+            &[disabled]{
+                ~ .icon {border-color: var(--color-border); background-color: var(--color-snow);
+                    &:before{color: var(--color-gray); }
+                }
+            }
+        }
+    }
+}
+
+.ui-widget-header{border-color: var(--color-border); background: var(--color-primary); color: var(--color-light);
+    font-size: var(--typo-md); font-weight: var(--fw-normal);
+}
+.ui-datepicker{
+    .ui-datepicker-prev{
+        span{background: var(--color-light); border-radius: 50%;
+            &:before{content: "\f104"; font-family: FontAwesome; color: var(--color-primary); text-indent: 0; font-size: var(--typo-default);
+                position: absolute; top: -5px; left: 5px;
+            }
+        }
+    }
+    .ui-datepicker-next{
+        span{ background: var(--color-light); border-radius: 50%;
+            &:before{content: "\f105"; font-family: FontAwesome; color: var(--color-primary); text-indent: 0; font-size: var(--typo-default);
+                position: absolute; top: -5px; right: 5px;
+            }
+        }
+    }
+}
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default, 
+.ui-button, html .ui-button.ui-state-disabled:hover, 
+html .ui-button.ui-state-disabled:active{border-color: var(--color-border);
+    background-color: var(--color-snow); color: var(--color-dark);
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight{border-color: var(--color-primary); background: var(--color-primary); color: var(--color-light);}
+
+
+.label-hidden {border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;}
+
+// breakpoints
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+}

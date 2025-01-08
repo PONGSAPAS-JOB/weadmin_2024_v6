@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <clipPath id="clip-facebook-icon">
+      <rect width="22" height="22"/>
+    </clipPath>
+  </defs>
+  <g id="facebook-icon" clip-path="url(#clip-facebook-icon)">
+    <g id="_x30_1._Facebook" transform="translate(6 2)">
+      <path id="Icon_11_" d="M30.968,19.753H28.849c-.342,0-.449-.128-.449-.449v-2.59c0-.342.128-.449.449-.449h2.119V14.381a4.754,4.754,0,0,1,.578-2.419,3.551,3.551,0,0,1,1.9-1.584A4.762,4.762,0,0,1,35.1,10.1h2.1c.3,0,.428.128.428.428v2.44c0,.3-.128.428-.428.428-.578,0-1.156,0-1.734.021a.773.773,0,0,0-.878.878c-.021.642,0,1.263,0,1.926h2.483c.342,0,.471.128.471.471v2.59c0,.342-.107.449-.471.449H34.586v6.978c0,.364-.107.492-.492.492H31.418c-.321,0-.449-.128-.449-.449v-7Z" transform="translate(-28.4 -10.1)" fill="#c00000"/>
+    </g>
+  </g>
+</svg>

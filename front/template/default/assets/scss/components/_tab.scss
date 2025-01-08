@@ -1,0 +1,53 @@
+/*============================== tab ===============================*/
+// .tab-control{position: relative; height: 32px; position: relative; margin-bottom: 0px;
+//     &:before{content: ''; position: absolute; height: 1px; left: 0; bottom: 0px; right: 0; 
+//         background-color: #DBDBDB; border-radius: 50px; z-index: 4;
+//     }
+// }
+.tab {position: relative; z-index: 3;
+    .control{display: flex; flex-wrap: nowrap; gap: 48px; list-style: none; padding: 0; margin: 0;
+        .link{display: flex; justify-content: center; align-items: center; height: 32px; line-height: 1.4; white-space: nowrap;
+            font-weight: var(--fw-semibold); font-size: var(--typo-default); color: var(--color-lightgray);text-align: center; position: relative; z-index: 1; 
+            text-decoration: none; transition: var(--transition);
+            &:hover,
+            &.hover{color: var(--color-primary);}
+            &.active {color:var(--color-dark); font-weight: var(--fw-semibold); pointer-events: none;}
+        }
+    }
+    .selector {height: 3px; background-color: var(--color-primary); position: absolute;
+        left: 0;bottom: 0;z-index: 0; border-radius: 0;
+        -webkit-transition-duration: .5s;
+        -o-transition-duration: .5s;
+        transition-duration: .5s;
+        -webkit-transition-timing-function: cubic-bezier(.42, 0, .58, 1);
+        -o-transition-timing-function: cubic-bezier(.42, 0, .58, 1);
+        transition-timing-function: cubic-bezier(.42, 0, .58, 1);
+    }
+}
+.tab-content{position: relative;opacity: 0;height: 0;overflow: hidden;visibility: hidden; display: block; transition: var(--transition-btn);
+    &.active {opacity: 1;height: auto;overflow: visible;visibility: visible;}
+}
+
+.tab-container.tab-vertical{display: flex; flex-wrap: nowrap;
+    .tab-control{flex: 0 0 auto; width: auto; height: auto;
+        &:before{height: auto; right: auto; top: 0; width: 1px;}
+    }
+    .tab-data{flex: 1 0 0%; padding-left: 15px;}
+    .tab{display: flex; flex-direction: column;
+        .selector{width: 3px; height: auto; top: 0; bottom: auto;}
+        .control{flex-direction: column; padding-left: 15px;gap: 16px;}
+    }
+}
+
+
+// breakpoints
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+}

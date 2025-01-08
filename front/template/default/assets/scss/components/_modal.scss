@@ -1,0 +1,61 @@
+.-modal-contact{
+    .modal-dialog{max-width: 740px;}
+    .modal-content{
+        background-image: url(../img/background/bg-modal.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 592px;
+        .modal-body{
+            color: $color-light;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & > div{
+                width: 429px;
+            }
+            .title{
+                font-size: 48px;
+                font-weight: bold;
+                line-height: 1em;
+                margin-top: 30px;
+            }
+            .title-sm{
+                margin-top: 5px;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 1em;
+            }
+            .action{margin-top: 106px;}
+        }
+    }
+}
+.-modal-contact-form{
+    .block{
+		width: 100%;
+		min-height: 500px;
+		padding: 20px;
+		background-color: $color-light;
+		.action{
+			margin-top: 20px;
+		}
+		.form-default{
+			.form-group{
+				.form-control-feedback{color: $color-primary;}
+				&.has-success,
+				&.has-error{
+					.form-control-feedback{color: $color-none;}
+				}
+			}
+		}
+	}
+	.select2-container .select2-selection--single{height: 50px;}
+	.select2-container--default .select2-selection--single{border-color: #ebebeb;}
+	.select2-container--default .select2-selection--single .select2-selection__rendered{line-height: 50px;}
+	.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, 
+	.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{border-color: $color-primary;}
+	.select2-container .select2-selection--single .select2-selection__rendered{padding-left: 20px;}
+	.select2-container--default .select2-selection--single .select2-selection__arrow b{filter: grayscale(1);}
+	.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{filter: grayscale(0);}
+	.form-control-feedback.glyphicon-remove{padding-left: 4px;}
+}

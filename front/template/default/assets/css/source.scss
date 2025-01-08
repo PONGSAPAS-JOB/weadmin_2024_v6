@@ -1,0 +1,62 @@
+/* frameworks */
+@import "../scss/frameworks/mixins";
+@import "../scss/frameworks/layout";
+
+/* config */
+@import "../scss/config/colors";
+@import "../scss/config/font";
+// @import "../scss/config/text";
+@import "../scss/config/base";
+
+/* components */
+@import "../scss/components/preloader";
+// @import "../scss/components/menu";
+@import "../scss/components/mobile-menu";
+@import "../scss/components/slick";
+@import "../scss/components/breadcrumb";
+@import "../scss/components/pagination";
+@import "../scss/components/editor-content";
+@import "../scss/components/whead";
+@import "../scss/components/button";
+@import "../scss/components/form-control";
+@import "../scss/components/radio-control";
+@import "../scss/components/checkbox-control";
+// @import "../scss/components/select2";
+@import "../scss/components/mCustomScrollbar";
+@import "../scss/components/modal";
+
+/* pages */
+@import '../scss/pages/default';
+// @import "../scss/pages/home";
+@import "../scss/pages/topgraphic";
+@import "../scss/pages/about-us";
+@import "../scss/pages/our-project";
+@import "../scss/pages/solution";
+@import "../scss/pages/product-service";
+@import "../scss/pages/detail";
+@import "../scss/pages/map";
+
+/* layouts */
+// @import "../scss/layouts/header";
+// @import "../scss/layouts/footer";
+@import "../scss/layouts/breakpoints";
+
+
+
+
+
+// @use '../scss/components/_mobile-menu';
+// @use '../scss/components/_button';
+@import '../scss/components/_form';
+@import '../scss/components/_select';
+@import '../scss/components/_swiper';
+@import '../scss/components/_tab';
+@import '../scss/components/_dropdown';
+
+@import '../scss/modules/_default';
+@import '../scss/modules/_home';
+@import '../scss/modules/_inner';
+@import '../scss/modules/_product-cat';
+@import '../scss/modules/_contact';
+@import '../scss/modules/_ck-editor';
+@import '../scss/modules/_ck-editor-jo';
